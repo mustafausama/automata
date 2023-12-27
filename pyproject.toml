@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "automata"
+version = "0.1.0"
+description = ""
+authors = ["Mustafa U. Abdelrahman <mustafausama@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+automata-lib = "^8.1.0"
+pandas = "^2.1.3"
+colormath = "^3.0.0"
+jupyterlab = "^4.0.9"
+visual-automata = "^1.1.1"
+pillow = "^10.1.0"
+automathon = "0.0.13"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
