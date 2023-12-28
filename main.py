@@ -1,6 +1,4 @@
-from visual_automata.fa.dfa import VisualDFA
-from lib.utils import input_NFA, GUI_images
-import tkinter as tk
+from lib.utils import input_NFA, GUI_images, print_dfa_formal_description
 
 NFA_image_name = 'NFA'
 DFA_image_name = 'DFA'
@@ -18,13 +16,16 @@ else:
 
 nfa.to_automathonNFA().view(NFA_image_name)
 
-dfa = nfa.to_DFA().to_visualDFA()
+dfa = nfa.to_DFA()
 
+visualDFA = dfa.to_visualDFA()
+
+print_dfa_formal_description(dfa)
 # Print DFA table in green color
 print("DFA table:"+'\033[32m')
-print(dfa.table)
+print(visualDFA.table)
 print('\033[0m')
 
-dfa.show_diagram(filename=DFA_image_name)
+visualDFA.show_diagram(filename=DFA_image_name)
 
 GUI_images(NFA_image_name+'.gv', DFA_image_name)

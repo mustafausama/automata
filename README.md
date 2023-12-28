@@ -77,7 +77,7 @@ This project demonstrates the practical application of theoretical concepts in a
 
 ## 2. Abstract
 
-The project presents a Python-based system for converting Non-deterministic Finite Automata (NFA) to Deterministic Finite Automata (DFA). It allows users to visualize the transformation process, enhancing understanding of automata theory.
+The project presents a Python-based system for converting Non-deterministic Finite Automata (NFA) to Deterministic Finite Automata (DFA). It allows users to visualize the transformation process, enhancing understanding of automata theory. Additionally, we have enhanced the project with a feature that prints the DFA formal description, including the set of states, alphabet, transition function, start state, and set of accept states. This aids in providing a comprehensive understanding of the DFA's structure beyond its visual representation.
 
 ## 3. Content
 
@@ -95,12 +95,12 @@ The project is implemented in Python, leveraging the `visual_automata` library f
 
 - `NFA.py` and `DFA.py`: Classes for NFA and DFA, with methods for conversion and visualization.
 - `default_nfa.py`: Provides a default NFA for demonstration purposes.
-- `utils.py`: Contains utility functions for user input and GUI display.
+- `utils.py`: Contains utility functions for user input, DFA formal description output, and GUI display.
 - `main.py`: The main script that integrates all modules and handles user interactions.
 
 ### Results and Analysis
 
-The system successfully converts NFAs to DFAs, displaying both in a graphical format. The output includes a visualization of the NFA and DFA, as well as the DFA transition table printed in green.
+The system successfully converts NFAs to DFAs, displaying both in a graphical format. The output includes a visualization of the NFA and DFA, as well as the DFA formal description and transition table.
 
 **Outputs:**
 
@@ -108,13 +108,13 @@ The system successfully converts NFAs to DFAs, displaying both in a graphical fo
    ---
    ![Input NFA](result-images/original-nfa.png)
    ---
-- NFA and DFA Visualization (Output GUI):  
+- NFA and DFA Visualization (GUI Output):  
    ---
    ![NFA-DFA Visualization](result-images/nfa-dfa-viz.png)
    ---
-- DFA Transition Table (Output Table):  
+- DFA Transition Table (Console Output):  
    ---
-   ![DFA Transition Table](result-images/dfa-table.png)
+   ![DFA Formal Definition and transition Table](result-images/dfa-table.png)
    ---
 ### Conclusions
 

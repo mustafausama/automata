@@ -1,4 +1,4 @@
-from .NFA import NFA
+from .NFA import NFA, DFA
 import tkinter as tk
 from PIL import Image, ImageTk
 
@@ -68,6 +68,29 @@ def input_NFA() -> NFA:
     )
     
     return nfa
+
+def print_dfa_formal_description(dfa):
+    print("\033[94mDFA Formal Description:\033[0m")
+
+    # print in orange color
+    print("\033[38;2;255;165;0m")
+
+    print("Q (States):", set(map(lambda x: DFA.frozen_set_to_str(x), list(dfa.states))))
+
+    print("Σ (Alphabet):", dfa.alphabet)
+
+    print("δ (Transitions):")
+    for state, transitions in dfa.transitions.items():
+        for symbol, target in transitions.items():
+            print(f"    δ({DFA.frozen_set_to_str(state)}, '{symbol}') -> {DFA.frozen_set_to_str(target)}")
+
+    print("q0 (Start State):", DFA.frozen_set_to_str(dfa.start_state))
+
+    print("F (Accept States):", set(map(lambda x: DFA.frozen_set_to_str(x), list(dfa.accept_states))))
+
+    print("DFA={Q, Σ, δ, q0, F}")
+    print("\033[0m")
+
 
 def display_image(window, image_path, title):
     img = Image.open(image_path)
