@@ -91,6 +91,54 @@ def print_dfa_formal_description(dfa):
     print("DFA={Q, Σ, δ, q0, F}")
     print("\033[0m")
 
+# Print DFA description in simulator-friendly format and save it in a file
+def print_dfa_description(dfa):
+    state_str = lambda x: DFA.frozen_set_to_str(x)
+    # print("#states")
+    # for state in sorted(dfa.states, key=state_str):
+    #     print(state_str(state))
+
+    # print("#initial")
+    # print(state_str(dfa.start_state))
+
+    # print("#accepting")
+    # for accept_state in sorted(dfa.accept_states, key=state_str):
+    #     print(state_str(accept_state))
+
+    # print("#alphabet")
+    # for symbol in sorted(dfa.alphabet):
+    #     print(symbol)
+
+    # print("#transitions")
+    # for state, transitions in dfa.transitions.items():
+    #     for symbol, target in transitions.items():
+    #         print(f"{state_str(state)}:{symbol}>{state_str(target)}")
+    string = ""
+    print("DFA Description (simulator-friendly):", end="\n\n")
+    string += "#states\n"
+    for state in sorted(dfa.states, key=state_str):
+        string += state_str(state) + "\n"
+
+    string += "\n#initial\n"
+    string += state_str(dfa.start_state) + "\n"
+
+    string += "\n#accepting\n"
+    for accept_state in sorted(dfa.accept_states, key=state_str):
+        string += state_str(accept_state) + "\n"
+
+    string += "\n#alphabet\n"
+    for symbol in sorted(dfa.alphabet):
+        string += symbol + "\n"
+
+    string += "\n#transitions\n"
+    for state, transitions in dfa.transitions.items():
+        for symbol, target in transitions.items():
+            string += f"{state_str(state)}:{symbol}>{state_str(target)}\n"
+    print(string)
+    with open("dfa_description.txt", "w") as f:
+        f.write(string)
+
+
 
 def display_image(window, image_path, title):
     img = Image.open(image_path)

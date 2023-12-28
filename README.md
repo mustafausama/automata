@@ -112,9 +112,13 @@ The system successfully converts NFAs to DFAs, displaying both in a graphical fo
    ---
    ![NFA-DFA Visualization](result-images/nfa-dfa-viz.png)
    ---
-- DFA Transition Table (Console Output):  
+- DFA Formal Definition and Transition Table (Console Output):  
    ---
    ![DFA Formal Definition and transition Table](result-images/dfa-table.png)
+   ---
+- DFA Simulator-Friendly Definition (Console Output):  
+   ---
+   ![Alt text](result-images/dfa-simulator.png)
    ---
 ### Conclusions
 
