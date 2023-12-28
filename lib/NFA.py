@@ -41,6 +41,7 @@ class NFA:
                 if sc in self.transitions and symbol in self.transitions[sc]:
                     target_states_set.update(self.transitions[sc][symbol])
         
+        target_states_set = set(self.epsilon_closure(frozenset(target_states_set)))
         if states not in self.target_states_cache:
             self.target_states_cache[states] = {}
 

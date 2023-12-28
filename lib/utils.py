@@ -94,25 +94,6 @@ def print_dfa_formal_description(dfa):
 # Print DFA description in simulator-friendly format and save it in a file
 def print_dfa_description(dfa):
     state_str = lambda x: DFA.frozen_set_to_str(x)
-    # print("#states")
-    # for state in sorted(dfa.states, key=state_str):
-    #     print(state_str(state))
-
-    # print("#initial")
-    # print(state_str(dfa.start_state))
-
-    # print("#accepting")
-    # for accept_state in sorted(dfa.accept_states, key=state_str):
-    #     print(state_str(accept_state))
-
-    # print("#alphabet")
-    # for symbol in sorted(dfa.alphabet):
-    #     print(symbol)
-
-    # print("#transitions")
-    # for state, transitions in dfa.transitions.items():
-    #     for symbol, target in transitions.items():
-    #         print(f"{state_str(state)}:{symbol}>{state_str(target)}")
     string = ""
     print("DFA Description (simulator-friendly):", end="\n\n")
     string += "#states\n"
